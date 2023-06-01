@@ -1,0 +1,5 @@
+# Ignore the virtual environment folder
+/venv
+
+# Ignore the extracted configuration files, they're just there for human analysis
+/tables

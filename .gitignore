@@ -9,3 +9,6 @@
 
 # Ignore the VSCode settings
 /.vscode
+
+# Ignore generated output files
+/output_files/*.txt

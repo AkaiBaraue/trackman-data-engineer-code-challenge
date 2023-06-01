@@ -1,3 +1,6 @@
+import datetime
+from os import path
+
 from sqlglot import parse_one, exp
 from read_configuration_files import load_and_clean_configuration_files
 
@@ -16,7 +19,39 @@ class DependencyBuilder:
             table_name: full_dependencies
             }
         
-        return dependency_tree
+        dependency_graph = f"{table_name}"
+        dependency_graph += self._create_dependency_graph_as_string_recursively(dependency_tree.get(table_name))
+        print(dependency_graph)
+        self._print_dependency_to_file(table_name, dependency_graph)
+        return
+    
+
+    def _create_dependency_graph_as_string_recursively(self, dependency_tree, curr_depth = 1):
+
+        base_line = "     " * curr_depth
+        base_line = f"\n{base_line[:-1]}|"
+
+        dep_graph = ""
+        for dep in dependency_tree:
+            for table, dependencies in dep.items():
+                # table = dep
+                dep_graph += base_line
+                dep_graph += f"{base_line}+ {table}"
+
+                if dependencies:
+                    dep_graph += self._create_dependency_graph_as_string_recursively(dependencies, curr_depth + 1)
+        
+        return dep_graph
+    
+
+    def _print_dependency_to_file(self, table_name, dependency_graph):
+
+        curr_timestamp = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
+        file_name = path.join("output_files", f"{table_name}_{curr_timestamp}.txt")
+
+        with open(file_name, "w") as file:
+            file.write(dependency_graph)
+            # file.writelines(dependency_graph)
     
 
     def _build_dependency_recursively(self, table_name):

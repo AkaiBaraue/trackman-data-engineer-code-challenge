@@ -31,7 +31,7 @@ def load_and_clean_configuration_files():
 
             for k, v in query.get("M").items():
                 _value = v.get("L", [v])[0].get("S")
-                processed_query[k] = _value
+                processed_query[k.lower()] = _value.lower()
                 pass
 
             cleaned_up_queries.append(processed_query)

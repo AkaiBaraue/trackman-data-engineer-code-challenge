@@ -3,3 +3,9 @@
 
 # Ignore the extracted configuration files, they're just there for human analysis
 /tables
+
+# Ignore compiled python files
+/__pycache__
+
+# Ignore the VSCode settings
+/.vscode

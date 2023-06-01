@@ -1,3 +1,5 @@
+import sys
+
 from dependency_builder import DependencyBuilder
 
 dep_builder = DependencyBuilder()

@@ -83,7 +83,7 @@ For this challenge, it honestly doesn't matter much. I decided to read and proce
 
 #### Testing
 
-Since the scope of this challenge is narrow, I have done a lot of manual testing and verification during development. I have written a few unit tests, which can be found in [unittests.py](unit_tests.py), but for a production implementation, more test cases should be covered by unit tests.
+Since the scope of this challenge is narrow, I have done a lot of manual testing and verification during development. I have written a few unit tests, which can be found in [unit_tests.py](unit_tests.py), but for a production implementation, more test cases should be covered by unit tests.
 
 ## Executing the code
 

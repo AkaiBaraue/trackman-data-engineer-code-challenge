@@ -1,2 +1,2 @@
 sqlglot==14.1.1
-black==23.3.0 # Used for formatting, not necessary for the program
+pytest==7.3.1

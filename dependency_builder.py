@@ -10,19 +10,39 @@ class DependencyBuilder:
         self._configuration_files = load_and_clean_configuration_files()
         pass
 
-    def build_dependency_for_table(self, table_name):
-        # Create the dependency tree for the given table
-        full_dependencies = self._build_dependency_recursively(table_name)
-        dependency_tree = {table_name: full_dependencies}
+    def process_table_and_save_graph(self, table_name):
+        """Runs the entire dependency process and saves the graph to an output file.
 
-        # Create the string representation of the dependency graph, based on the tree created above.
+        Args:
+            table_name (str): The name of the table to build a dependency graph for
+        """
+
+        dependency_tree = self._build_dependency_tree_for_table(table_name)
+
+        dependency_graph = self._create_dependency_graph_as_string(table_name, dependency_tree)
+
+        # Print the dependency tree to a .txt file
+        self._print_dependency_graph_to_file(table_name, dependency_graph)
+
+    def _create_dependency_graph_as_string(self, table_name, dependency_tree):
+        """Creates the string representation of the dependency graph, based on the given dependency tree.
+
+        Args:
+            table_name (str): The name of the table to build the graph for
+            dependency_tree (dict): A dictionary that represents the dependency tree for the table
+
+        Returns:
+            str: A string representation of the dependency graph
+        """        
+        
         dependency_graph = f"{table_name}"
+
+        # Use the recursive function to build the entire graph
         dependency_graph += self._create_dependency_graph_as_string_recursively(
             dependency_tree.get(table_name)
         )
 
-        # Print the dependency tree to a .txt file
-        self._print_dependency_graph_to_file(table_name, dependency_graph)
+        return dependency_graph
 
     def _create_dependency_graph_as_string_recursively(
         self, dependency_tree, curr_depth=1
@@ -38,7 +58,7 @@ class DependencyBuilder:
         """
 
         # Indent the graph based on the current depth
-        base_line = "        " * curr_depth
+        base_line = "    " * curr_depth
         base_line = f"\n{base_line}|"
 
         dep_graph = ""
@@ -69,6 +89,22 @@ class DependencyBuilder:
         with open(file_name, "w") as file:
             file.write(dependency_graph)
 
+    def _build_dependency_tree_for_table(self, table_name):
+        """Builds the full dependency tree for the given table
+
+        Args:
+            table_name (str): The name of the table to build a dependency tree for
+
+        Returns:
+            dict: A dictionary representing the full dependency tree.
+        """
+
+        # Create the dependency tree for the given table
+        full_dependencies = self._build_dependency_recursively(table_name)
+        dependency_tree = {table_name: full_dependencies}
+        
+        return dependency_tree
+
     def _build_dependency_recursively(self, table_name):
         """Recursively builds the dependency tree from the given table and down
 
@@ -88,8 +124,10 @@ class DependencyBuilder:
         if not table_data:
             return table_dependencies
 
-        # For every entry, create the basic "SELECT ... FROM ... " query, as that is all that's needed to
-        # extract the dependency tables
+        # For every entry, create the basic "SELECT ... FROM ... " query, as that is all SQLGlot needs to
+        # extract the dependency tables.
+        # The "SELECT" part could really be "SELECT *" for the purpose of this exercise, but might as well use
+        # the actual statement from the file as it's been loaded.
         for query_entry in table_data:
             table_query = (
                 f"""SELECT {query_entry.get("select")} FROM {query_entry.get("from")}"""

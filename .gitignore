@@ -6,9 +6,10 @@
 
 # Ignore compiled python files
 /__pycache__
+/.pytest_cache
 
 # Ignore the VSCode settings
 /.vscode
 
 # Ignore generated output files
-/output_files/*.txt
+/output_files/*[0-9].txt

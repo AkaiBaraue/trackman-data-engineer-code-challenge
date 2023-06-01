@@ -1,0 +1,19 @@
+games.latency
+    |
+    |+ advance.merged_measurement
+    |
+    |+ sdkjson.live_pitch_data
+    |
+    |+ sdkjson.measurement
+    |
+    |+ crosscheck.tags
+        |
+        |+ scout.tags
+            |
+            |+ base.tags
+            |
+            |+ dict.player_dedup
+            |
+            |+ dict.player_dedup
+        |
+        |+ base.games

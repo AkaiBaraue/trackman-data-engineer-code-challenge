@@ -1,0 +1,7 @@
+report.mlb_orgs
+    |
+    |+ dict.team_org
+    |
+    |+ scout.teams
+    |
+    |+ scout.teams

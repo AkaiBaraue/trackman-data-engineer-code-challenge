@@ -1,0 +1,27 @@
+report.scheduled_no_exceptions_hist
+    |
+    |+ report.schedule_new_level
+        |
+        |+ lineup.schedul
+    |
+    |+ games.metadata
+        |
+        |+ base.games
+        |
+        |+ base.locations
+        |
+        |+ rundown.location_history
+            |
+            |+ rundown.location_history_rows
+                |
+                |+ rundown.location
+            |
+            |+ rundown.location_history_rows
+                |
+                |+ rundown.location
+    |
+    |+ report.exp_access_rules_hist
+        |
+        |+ rundown.access_rules_end
+        |
+        |+ broadcast.priority_lists

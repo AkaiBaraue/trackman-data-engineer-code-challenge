@@ -1,0 +1,7 @@
+report.verified_levels_18
+    |
+    |+ base.location
+    |
+    |+ base.games
+    |
+    |+ dict.game_type

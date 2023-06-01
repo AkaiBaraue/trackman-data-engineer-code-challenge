@@ -1,0 +1,13 @@
+report.delivered_no_exceptions
+    |
+    |+ report.delivered_new_pk
+        |
+        |+ broadcast.delivered_games
+    |
+    |+ base.games
+    |
+    |+ report.exp_access_rules
+        |
+        |+ broadcast.access_rules
+        |
+        |+ broadcast.priority_lists

@@ -1,0 +1,3 @@
+report.delivered_new_pk
+    |
+    |+ broadcast.delivered_games

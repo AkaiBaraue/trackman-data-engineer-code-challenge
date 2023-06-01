@@ -1,0 +1,33 @@
+crosscheck.calibration_maintenance
+    |
+    |+ base.calibration_maintenance
+    |
+    |+ crosscheck.calibrations
+    |
+    |+ crosscheck.games
+        |
+        |+ base.games
+        |
+        |+ base.locations
+        |
+        |+ rundown.location_history
+            |
+            |+ rundown.location_history_rows
+                |
+                |+ rundown.location
+            |
+            |+ rundown.location_history_rows
+                |
+                |+ rundown.location
+        |
+        |+ crosscheck.tags
+            |
+            |+ scout.tags
+                |
+                |+ base.tags
+                |
+                |+ dict.player_dedup
+                |
+                |+ dict.player_dedup
+            |
+            |+ base.games

@@ -1,0 +1,17 @@
+games.oem
+    |
+    |+ radar.measurement
+    |
+    |+ radar.live_pitch_data
+    |
+    |+ crosscheck.tags
+        |
+        |+ scout.tags
+            |
+            |+ base.tags
+            |
+            |+ dict.player_dedup
+            |
+            |+ dict.player_dedup
+        |
+        |+ base.games

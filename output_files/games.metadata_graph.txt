@@ -1,0 +1,15 @@
+games.metadata
+    |
+    |+ base.games
+    |
+    |+ base.locations
+    |
+    |+ rundown.location_history
+        |
+        |+ rundown.location_history_rows
+            |
+            |+ rundown.location
+        |
+        |+ rundown.location_history_rows
+            |
+            |+ rundown.location

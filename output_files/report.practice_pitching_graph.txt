@@ -1,0 +1,5 @@
+report.practice_pitching
+    |
+    |+ practice.play
+    |
+    |+ practice.game

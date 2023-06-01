@@ -1,0 +1,19 @@
+games.live_final
+    |
+    |+ merged.measurement
+    |
+    |+ merged.live_pitch_data
+    |
+    |+ merged.batting_launch_data
+    |
+    |+ crosscheck.tags
+        |
+        |+ scout.tags
+            |
+            |+ base.tags
+            |
+            |+ dict.player_dedup
+            |
+            |+ dict.player_dedup
+        |
+        |+ base.games

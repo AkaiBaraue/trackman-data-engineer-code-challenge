@@ -1,0 +1,23 @@
+locations.vision_oem
+    |
+    |+ radar.measurement
+    |
+    |+ radar.live_pitch_data
+    |
+    |+ merged.measurement
+    |
+    |+ vision.live_pitch_data
+    |
+    |+ base.locations
+    |
+    |+ crosscheck.tags
+        |
+        |+ scout.tags
+            |
+            |+ base.tags
+            |
+            |+ dict.player_dedup
+            |
+            |+ dict.player_dedup
+        |
+        |+ base.games

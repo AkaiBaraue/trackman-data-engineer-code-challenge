@@ -81,6 +81,10 @@ However, this also means replacing the entire `.tar.gz` file every time a change
 
 For this challenge, it honestly doesn't matter much. I decided to read and process all configuration files at once, as I wanted to verify that all the files were handled properly. However, with enough configuration files and if sytem memory is a limitation, it would make more sense to only read the configuration files as they're needed. This reduces the total files to hold in memory (unless _all_ graphs have to be generated), but also introduces a slightly longer run-time when requesting a graph, as files have to be read and processed regularly.
 
+#### Testing
+
+Since the scope of this challenge is narrow, I have done a lot of manual testing and verification during development. I have written a few unit tests, which can be found in [unittests.py](unit_tests.py), but for a production implementation, more test cases should be covered by unit tests.
+
 ## Executing the code
 
 1. Make sure to use Python 3.9 or higher

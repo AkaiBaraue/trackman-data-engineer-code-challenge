@@ -15,10 +15,6 @@ report.scheduled_combined
                 |+ rundown.location_history_rows
                     |
                     |+ rundown.location
-                |
-                |+ rundown.location_history_rows
-                    |
-                    |+ rundown.location
         |
         |+ report.exp_access_rules
             |
@@ -37,10 +33,6 @@ report.scheduled_combined
             |+ base.locations
             |
             |+ rundown.location_history
-                |
-                |+ rundown.location_history_rows
-                    |
-                    |+ rundown.location
                 |
                 |+ rundown.location_history_rows
                     |

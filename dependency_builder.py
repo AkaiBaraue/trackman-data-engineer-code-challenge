@@ -144,11 +144,12 @@ class DependencyBuilder:
 
         return table_dependencies
 
-    def extract_dependency_tables_from_query(self, query):
+    def extract_dependency_tables_from_query(self, query, deduplicate_dependencies = True):
         """Extracts the dependency tables from the FROM part of the given query
 
         Args:
             query (str): The query to process
+            deduplicate_dependencies (bool): Whether to dedpuplicate tables that are mentinoed multiple times in a join or not
 
         Returns:
             list: A list of the dependency tables in the format schema.table
@@ -167,6 +168,10 @@ class DependencyBuilder:
             if where_is_space:
                 table = table[:where_is_space]
 
-            dependency_tables.append(table)
+            # Some tables join to the same table mutliple times. In those cases, deduplicate them unless otherwise noted.
+            if deduplicate_dependencies and table not in dependency_tables:
+                dependency_tables.append(table)
+            elif not deduplicate_dependencies:
+                dependency_tables.append(table)
 
         return dependency_tables

@@ -5,14 +5,10 @@ trout.app_angle
         |+ base.tags
         |
         |+ dict.player_dedup
-        |
-        |+ dict.player_dedup
     |
     |+ base.measurements
     |
     |+ base.games
-    |
-    |+ base.players
     |
     |+ base.players
     |

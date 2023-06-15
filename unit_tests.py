@@ -24,7 +24,6 @@ class Test_DependencyBuilder:
                             "scout.tags": [
                                 {"base.tags": []},
                                 {"dict.player_dedup": []},
-                                {"dict.player_dedup": []},
                             ]
                         },
                         {"base.games": []},
@@ -52,8 +51,6 @@ class Test_DependencyBuilder:
             "        |+ scout.tags",
             "            |",
             "            |+ base.tags",
-            "            |",
-            "            |+ dict.player_dedup",
             "            |",
             "            |+ dict.player_dedup",
             "        |",

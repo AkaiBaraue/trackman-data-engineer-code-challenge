@@ -17,7 +17,5 @@ locations.vision_oem
             |+ base.tags
             |
             |+ dict.player_dedup
-            |
-            |+ dict.player_dedup
         |
         |+ base.games

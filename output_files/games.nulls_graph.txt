@@ -7,7 +7,5 @@ games.nulls
             |+ base.tags
             |
             |+ dict.player_dedup
-            |
-            |+ dict.player_dedup
         |
         |+ base.games

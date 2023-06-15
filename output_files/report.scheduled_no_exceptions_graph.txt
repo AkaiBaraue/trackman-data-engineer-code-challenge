@@ -13,10 +13,6 @@ report.scheduled_no_exceptions
             |+ rundown.location_history_rows
                 |
                 |+ rundown.location
-            |
-            |+ rundown.location_history_rows
-                |
-                |+ rundown.location
     |
     |+ report.exp_access_rules
         |

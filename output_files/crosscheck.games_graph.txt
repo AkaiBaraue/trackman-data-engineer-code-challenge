@@ -9,18 +9,12 @@ crosscheck.games
         |+ rundown.location_history_rows
             |
             |+ rundown.location
-        |
-        |+ rundown.location_history_rows
-            |
-            |+ rundown.location
     |
     |+ crosscheck.tags
         |
         |+ scout.tags
             |
             |+ base.tags
-            |
-            |+ dict.player_dedup
             |
             |+ dict.player_dedup
         |

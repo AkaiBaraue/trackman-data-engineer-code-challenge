@@ -9,7 +9,3 @@ games.metadata
         |+ rundown.location_history_rows
             |
             |+ rundown.location
-        |
-        |+ rundown.location_history_rows
-            |
-            |+ rundown.location

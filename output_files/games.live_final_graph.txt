@@ -13,7 +13,5 @@ games.live_final
             |+ base.tags
             |
             |+ dict.player_dedup
-            |
-            |+ dict.player_dedup
         |
         |+ base.games
